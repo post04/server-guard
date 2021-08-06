@@ -1,0 +1,13 @@
+{
+    "susLevel": 1,
+    "punishment": "ban",
+    "token": "",
+    "modChannel": "873285847653416961",
+    "checkAvatar": true,
+    "checkBadges": true,
+    "checkAccountAge": true,
+    "verifiedRole": "679079133086613506",
+    "captchaMessage": "873286225023352893",
+    "captchaTries": 3,
+    "captchaReaction": "✅"
+}

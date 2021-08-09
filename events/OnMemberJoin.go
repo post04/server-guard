@@ -120,7 +120,7 @@ func (c *Config) CheckBots(GcCycle time.Duration) {
 // https://github.com/post04/dr-docso/commit/fbfa4aa1b80b604b2c03f9c6c5782aadcd42e071#diff-92ef575f410b265e12970f2e513257450e9f390d36fdc623f095937b564d164f
 func (c *Config) ClearBots(GcCycle time.Duration) {
 	if !c.DetectRaids {
-
+		return
 	}
 	garbageCollector := time.NewTicker(GcCycle)
 	for range garbageCollector.C {

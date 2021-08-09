@@ -102,6 +102,10 @@ func (c *Config) OnReaction(s *discordgo.Session, reaction *discordgo.MessageRea
 				return
 			}
 			_, err = s.ChannelMessageSend(reaction.ChannelID, fmt.Sprintf("You have failed the captcha! You have %v more tries!", (c.CaptchaTries-c.CaptchaListeners[reaction.UserID].Tries)))
+			if err != nil {
+				fmt.Println(err)
+				return
+			}
 		}
 		return
 	}

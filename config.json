@@ -1,13 +1,17 @@
 {
-    "susLevel": 1,
-    "punishment": "ban",
+    "susLevel": 2,
+    "punishment": "kick",
     "token": "",
-    "modChannel": "873285847653416961",
+    "modChannel": "873240897909850175",
     "checkAvatar": true,
     "checkBadges": true,
     "checkAccountAge": true,
     "verifiedRole": "679079133086613506",
     "captchaMessage": "873286225023352893",
     "captchaTries": 3,
-    "captchaReaction": "✅"
+    "captchaReaction": "✅",
+    "accountAgeMS": 604800000,
+    "detectRaids": true,
+    "botLimit": 10,
+    "joinTime": 300000
 }

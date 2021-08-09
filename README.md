@@ -11,9 +11,12 @@
 - CaptchaMessage: The message that the user reacts to when trying to be served a captcha.
 - CaptchaTries: The amount of tries a user has to solve a captcha. 
 - CaptchaReaction: The emoji which the user has to react when trying to be served a captcha.
+- AccountAgeMS: The minimum age that an account must be before it wont be flagged as a bot. This is Unix Millisecond.
+- BotLimit: The amount of users that can join with the same name in *JoinTime MS before they all get detected as a bot and punished.
+- JoinTime: The amount of time in MilliSeconds it takes after join to wipe the *Config.PreviousJoined users.
+- DetectRaids: Boolean option that chooses rather the bot will punish a user because of another user being punished with their username and/or the user will be punished for an influx of users joining with their name, this can be configured with the BotLimit and JoinTime option.
 
 # Notice
 This is a WIP meaning not everything is done and updates will come in the future.\
-I plan on adding checks for flood when members join and when reactions are added.\
 **Please use this with membership screening on with Email and Phone verification required.**\
 If you want to add more emojis, they must be 60x60 or it will look weird.

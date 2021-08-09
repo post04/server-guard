@@ -38,13 +38,14 @@ func init() {
 		c.Emojis = append(c.Emojis, strings.Split(file.Name(), ".")[0])
 	}
 	c.CaptchaListeners = make(map[string]*events.Captcha)
+	c.PreviousJoins = make(map[string][]*events.JoinedUser)
 	fmt.Println(c.Emojis)
 }
 
 func ready(session *discordgo.Session, evt *discordgo.Ready) {
 	fmt.Printf("Logged in under: %s#%s\n", evt.User.Username, evt.User.Discriminator)
-	//session.UpdateGameStatus(0, fmt.Sprintf("%shelp for information!", c.Prefix))
-	//	go cmd.CheckListeners(5 * time.Minute)
+	go c.ClearBots(5 * time.Minute)
+	go c.CheckBots(5 * time.Second)
 }
 
 func main() {
@@ -52,6 +53,7 @@ func main() {
 	if err != nil {
 		log.Fatal("ERROR LOGGING IN", err)
 	}
+	c.Session = bot
 	bot.Identify.Intents = discordgo.IntentsGuildMembers | discordgo.IntentsGuildMessageReactions | discordgo.IntentsDirectMessageReactions
 	bot.AddHandler(ready)
 	bot.AddHandler(c.OnMemberJoin)

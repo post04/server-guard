@@ -58,14 +58,14 @@ func (c *Config) PunishBots(bots []*JoinedUser, s *discordgo.Session) {
 			c.PreviousJoins[bot.Username][i] = b
 			//fmt.Printf("%+v\n", c.PreviousJoins[bot.Username][i])
 			if c.Punishment == "ban" || c.Punishment == "bann" {
-				err := s.GuildBanCreateWithReason(bot.GuildID, bot.UserID, fmt.Sprintf("User involved in a bot raid"), 0)
+				err := s.GuildBanCreateWithReason(bot.GuildID, bot.UserID, "User involved in a bot raid", 0)
 				if err != nil {
 					fmt.Println(err)
 					return
 				}
 			}
 			if c.Punishment == "kick" {
-				err := s.GuildMemberDeleteWithReason(bot.GuildID, bot.UserID, fmt.Sprintf("User involved in a bot raid"))
+				err := s.GuildMemberDeleteWithReason(bot.GuildID, bot.UserID, "User involved in a bot raid")
 				if err != nil {
 					fmt.Println(err)
 					return

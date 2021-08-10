@@ -142,6 +142,11 @@ func (c *Config) OnReaction(s *discordgo.Session, reaction *discordgo.MessageRea
 			fmt.Println(err)
 			return
 		}
+		_, err = s.ChannelMessageSend(dm.ID, "Please react with the emoji seen in the image below!")
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
 		msg, err := s.ChannelFileSend(dm.ID, "test.jpg", image)
 		if err != nil {
 			fmt.Println(err)

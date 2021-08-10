@@ -69,12 +69,15 @@ func (c *Config) OnReaction(s *discordgo.Session, reaction *discordgo.MessageRea
 			c.CaptchaListeners[reaction.UserID].WrongAnswers = append(c.CaptchaListeners[reaction.UserID].WrongAnswers, reaction.Emoji.Name)
 			c.CaptchaListeners[reaction.UserID].Tries = cap.Tries + 1
 			if c.CaptchaListeners[reaction.UserID].Tries >= c.CaptchaTries {
+				if c.Punishment == "ban" {
+					c.Punishment = "bann"
+				}
 				_, err := s.ChannelMessageSend(reaction.ChannelID, "You failed the captcha and ran out of tries! You will now be "+c.Punishment+"ed!")
 				if err != nil {
 					fmt.Println(err)
 					return
 				}
-				if c.Punishment == "ban" {
+				if c.Punishment == "ban" || c.Punishment == "bann" {
 					err = s.GuildBanCreateWithReason(cap.GuildID, reaction.UserID, "Failed captcha", 0)
 					if err != nil {
 						fmt.Println(err)

@@ -133,7 +133,7 @@ func (c *Config) NewCaptcha() (io.Reader, string, error) {
 	for _, i := range usageList {
 		for _, j := range i.list {
 			for _, k := range leastUsage {
-				if i.name == k.name && !spedContains(coords, j) {
+				if i.name == k.name && !contains(coords, j) {
 					coords = append(coords, j)
 				}
 			}
@@ -285,7 +285,7 @@ func dist(r int, g int, b int, colorr colorr) float64 {
 	return float64((r-colorr.r)*(r-colorr.r) + (g-colorr.g)*(g-colorr.g) + (b-colorr.b)*(b-colorr.b))
 }
 
-func spedContains(coords [][]int, testcoords []int) bool {
+func contains(coords [][]int, testcoords []int) bool {
 	for _, i := range coords {
 		if abs(i[0]-testcoords[0]) < 7 && abs(i[1]-testcoords[1]) < 7 && abs(i[2]-testcoords[2]) < 7 && abs(i[3]-testcoords[3]) < 7 {
 			return true

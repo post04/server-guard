@@ -1,13 +1,10 @@
 package events
 
 import (
-	"bytes"
 	"fmt"
-	"math/rand"
 	"strings"
 
 	"github.com/bwmarrin/discordgo"
-	"github.com/disintegration/imaging"
 )
 
 // Captcha is a struct that holds all captcha information
@@ -128,17 +125,10 @@ func (c *Config) OnReaction(s *discordgo.Session, reaction *discordgo.MessageRea
 				return
 			}
 		}
-		emoji := c.Emojis[rand.Intn(len(c.Emojis))]
-		src, err := imaging.Open("emojis/" + emoji + ".png")
+		image, emoji, err := c.NewCaptcha()
 		if err != nil {
 			fmt.Println(err)
 			return
-		}
-		img1 := imaging.AdjustSaturation(src, 0-float64(rand.Intn(100)))
-		image := bytes.NewBuffer([]byte{})
-		err = imaging.Encode(image, img1, imaging.JPEG)
-		if err != nil {
-			fmt.Println(err)
 		}
 		dm, err := s.UserChannelCreate(reaction.UserID)
 		if err != nil {

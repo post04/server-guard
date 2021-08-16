@@ -1,6 +1,12 @@
 # server-guard
  A discord server guard which uses emojis and bot detection (WIP)
 
+# features
+- bot detection system
+- custom captcha system
+    This captcha system is like no other containing an emoji captcha, it uses images of emojis and requires a user to react with the emoji shown in the image to verify themselves.\
+    This captcha system uses an algorithm coded by my friend HelloThere#1337 on discord to warp images and add random lines along with random pixel changes to the image, this is to make the image harder to solve with basic OCR.
+
 # Config options
 - SusLevel: how many checks the account has to fail before being served a punishment. Low is 1 max is 3.
 - Punishment: the punishment served to the user on failing captcha of failing bot checks. This can be either "kick" or "ban".
@@ -17,6 +23,5 @@
 - DetectRaids: Boolean option that chooses rather the bot will punish a user because of another user being punished with their username and/or the user will be punished for an influx of users joining with their name, this can be configured with the BotLimit and JoinTime option.
 
 # Notice
-This is a WIP meaning not everything is done and updates will come in the future.\
 **Please use this with membership screening on with Email and Phone verification required.**\
-If you want to add more emojis, they must be 60x60 or it will look weird.
+If you want to add more emojis, they must be 60x60 and contain more than 2 colors.

@@ -3,7 +3,7 @@
 
 # features
 - bot detection system
-- custom captcha system
+- custom captcha system\
     This captcha system is like no other containing an emoji captcha, it uses images of emojis and requires a user to react with the emoji shown in the image to verify themselves.\
     This captcha system uses an algorithm coded by my friend HelloThere#1337 on discord to warp images and add random lines along with random pixel changes to the image, this is to make the image harder to solve with basic OCR.
 

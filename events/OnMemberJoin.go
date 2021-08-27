@@ -9,21 +9,23 @@ import (
 
 // Config stores everything in `config.json`
 type Config struct {
-	Token            string        `json:"token"`
-	ModChannel       string        `json:"modChannel"`
-	Punishment       string        `json:"punishment"`
-	SusLevel         int           `json:"susLevel"`
-	CheckBadges      bool          `json:"checkBadges"`
-	CheckAccountAge  bool          `json:"checkAccountAge"`
-	CheckAvatar      bool          `json:"checkAvatar"`
-	VerifiedRole     string        `json:"verifiedRole"`
-	CaptchaMessageID string        `json:"captchaMessage"`
-	CaptchaReaction  string        `json:"captchaReaction"`
-	CaptchaTries     int           `json:"captchaTries"`
-	AccountAgeMS     int64         `json:"accountAgeMS"`
-	BotLimit         int           `json:"botLimit"`
-	JoinTime         time.Duration `json:"joinTime"`
-	DetectRaids      bool          `json:"detectRaids"`
+	Token             string        `json:"token"`
+	ModChannel        string        `json:"modChannel"`
+	Punishment        string        `json:"punishment"`
+	SusLevel          int           `json:"susLevel"`
+	CheckBadges       bool          `json:"checkBadges"`
+	CheckAccountAge   bool          `json:"checkAccountAge"`
+	CheckAvatar       bool          `json:"checkAvatar"`
+	VerifiedRole      string        `json:"verifiedRole"`
+	CaptchaMessageID  string        `json:"captchaMessage"`
+	CaptchaReaction   string        `json:"captchaReaction"`
+	CaptchaTries      int           `json:"captchaTries"`
+	AccountAgeMS      int64         `json:"accountAgeMS"`
+	BotLimit          int           `json:"botLimit"`
+	JoinTime          time.Duration `json:"joinTime"`
+	DetectRaids       bool          `json:"detectRaids"`
+	AntiMassPing      bool          `json:"antiMassPing"`
+	AntiMassPingLimit int           `json:"antiMassPingLimit"`
 
 	Emojis           []string
 	CaptchaListeners map[string]*Captcha

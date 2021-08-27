@@ -7,11 +7,13 @@
     "checkBadges": true,
     "checkAccountAge": true,
     "verifiedRole": "679079133086613506",
-    "captchaMessage": "873286225023352893",
+    "captchaMessage": "876955485092323429",
     "captchaTries": 3,
     "captchaReaction": "✅",
     "accountAgeMS": 604800000,
     "detectRaids": true,
     "botLimit": 10,
-    "joinTime": 300000
+    "joinTime": 300000,
+    "antiMassPing": true,
+    "antiMassPingLimit": 20
 }
